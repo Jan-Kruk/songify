@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Component
 public class SongMapper {
     public Song mapFromCreateSongRequestDtoToSong(SongRequestDto dto) {
-        return new Song(dto.songName(),dto.artistName());
+        return new Song(dto.songName(),dto.artist());
     }
     public CreateSingleSongResponseDto mapFromSongToCreateSongResponseDto(Song song) {
         return new CreateSingleSongResponseDto(song);
@@ -29,7 +29,7 @@ public class SongMapper {
         return new UpdateSongResponseDto(song.songName(), song.artist());
     }
     public Song mapUpdateSongRequestDtoToSong(UpdateSongRequestDto request) {
-        return new Song(request.songName(), request.artistName());
+        return new Song(request.songName(), request.artist());
     }
 
     public PartiallyUpdateSongResponseDto mapSongToPartiallyUpdateSongResponseDto(Song newSong) {

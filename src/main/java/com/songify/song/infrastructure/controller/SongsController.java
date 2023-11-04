@@ -66,16 +66,11 @@ public class SongsController {
         return ResponseEntity.ok(body);
     }
 
-
-
-
     @DeleteMapping("/{id}")
     public ResponseEntity<DeleteSongResponseDto> deleteSongByIdUsingPathVariable(@PathVariable Integer id) {
         Song removedSong = songRemover.deleteSongById(id);
         return ResponseEntity.ok(new DeleteSongResponseDto("Song with id: " + id + " " + removedSong +  " is deleted", HttpStatus.NOT_FOUND));
     }
-
-
 
     @PutMapping("/{id}")
     public ResponseEntity<UpdateSongResponseDto> updateSong(@PathVariable Integer id, @RequestBody @Valid UpdateSongRequestDto request) {

@@ -9,9 +9,9 @@ public record SongRequestDto(
         @NotEmpty(message = "songName must not be empty")
         @Size(min = 3, message = "size of song must be above 2")
         String songName,
-        @NotNull(message = "artistName must not be null")
-        @NotEmpty(message = "artistName must not be empty")
-        @Size(min = 3, message = "size of artistName must be above 2")
-        String artistName) {
+        @NotNull(message = "artist must not be null")
+        @NotEmpty(message = "artist must not be empty")
+        @Size(min = 3, message = "size of artist must be above 2")
+        String artist) {
 
 }

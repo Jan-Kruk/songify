@@ -1,5 +1,5 @@
 package com.songify.song.infrastructure.controller.dto.response;
 
-public record UpdateSongResponseDto(String song,String artistName) {
+public record UpdateSongResponseDto(String songName,String artist) {
 
 }

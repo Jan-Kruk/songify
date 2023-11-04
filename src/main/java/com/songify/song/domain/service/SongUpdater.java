@@ -31,12 +31,12 @@ public class SongUpdater {
         }
         Song song = songRepository.findSong(id);
         Song updatedSong;
-        if (request.songName() != null && request.artistName() != null) {
-            updatedSong = new Song(request.songName(), request.artistName());
+        if (request.songName() != null && request.artist() != null) {
+            updatedSong = new Song(request.songName(), request.artist());
         } else if (request.songName() != null) {
             updatedSong = new Song(request.songName(), song.artist());
         } else {
-            updatedSong = new Song(song.songName(), request.artistName());
+            updatedSong = new Song(song.songName(), request.artist());
         }
         Song oldSong = songRepository.updateSong(id, updatedSong);
         Song newSong = songRepository.findSong(id);
